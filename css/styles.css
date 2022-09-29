@@ -14,18 +14,18 @@ h1 {
 	line-height: 10%;
 }
 h2 {
-	font-size: 20px;
+	font-size: 25px;
 	text-align: center;
 	color: blue;
 }
 
 t {
-	font-size: 19px;
+	font-size: 22px;
 	font-family: Arial, Helvetica, sans-serif;
 	color: darkslateblue;
 }
 p1 {
-	font-size: 18px;
+	font-size: 20px;
 	text-anchor: start;
 }
 p2 {
@@ -53,16 +53,17 @@ mark.green {
 .barchart2 {grid-area: barchart2; text-align: center;}
 .description3 { grid-area: description3; font-family: Arial, Helvetica, sans-serif;text-align: center;}
 .description4 { grid-area: description4; font-family: Arial, Helvetica, sans-serif;text-align: center;}
+.description5 { grid-area: description5; font-family: Arial, Helvetica, sans-serif;text-align: center;}
 
 .grid-container {
 	display: grid;
 	grid-template:
-	  'header header'
-	  'map description1'
-	  'description4 dotplot '
-	  'isotype_dot description2'
-	  'description3 barchart1'
-	  'description3 barchart2';
+	  'header header header header'
+	  'map description1 description1 description1'
+	  'description4 dotplot dotplot dotplot'
+	  'isotype_dot isotype_dot description2 description2'
+	  'description3 barchart1 barchart1 barchart1'
+	  'description5 barchart2 barchart2 barchart2';
 	grid-gap: 10px;
 	background-color: #2196F3;
 	padding: 10px;
