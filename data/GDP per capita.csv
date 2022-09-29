@@ -29,7 +29,7 @@ Cambodia,5004,KHM
 Cameroon,4099,CMR
 Canada,52144,CAN
 Cape Verde,8716,CPV
-Central African Republic,864,CAF
+Central African Rep.,864,CAF
 Chad,2603,TCD
 Chile,27150,CHL
 China,20984,CHN
@@ -44,7 +44,7 @@ Dem. Rep. Congo,873,COD
 Denmark,55675,DNK
 Djibouti,5855,DJI
 Dominica,12851,DMA
-Dominican Republic,20625,DOM
+Dominican Rep.,20625,DOM
 East Timor,5321,TLS
 Ecuador,11866,ECU
 Egypt,14800,EGY
@@ -136,7 +136,7 @@ Philippines,10094,PHL
 Poland,35651,POL
 Portugal,34936,PRT
 Puerto Rico,41198,PRI
-Republic of the Congo,7336,COG
+ Congo,7336,COG
 Romania,29555,ROU
 Russia,30820,RUS
 Rwanda,2642,RWA
@@ -157,7 +157,7 @@ Solomon Islands,2363,SLB
 Somalia,314.5,SOM
 South Africa,13965,ZAF
 South Korea,46452,KOR
-South Sudan,1715,SSD
+S. Sudan,1715,SSD
 Spain,43007,ESP
 Sri Lanka,14509,LKA
 Sudan,3986,SDN

@@ -37,14 +37,14 @@ Cambodia,25.3,KHM
 Cameroon,18.5,CMR
 Canada,42.2,CAN
 Cayman Islands,40,CYM
-Central African Republic,19.7,CAF
+Central African Rep.,19.7,CAF
 Chad,17.8,TCD
 Chile,34.4,CHL
 China,37.4,CHN
 Colombia,30,COL
 Comoros,19.9,COM
 Dem. Rep. Congo,18.6,COD
-Republic of the Congo,19.7,COG
+ Congo,19.7,COG
 Cook Islands,36.5,COK
 Costa Rica,31.3,CRI
 Ivory Coast,20.9,CIV
@@ -56,7 +56,7 @@ Czech Republic,42.1,CZE
 Denmark,42.2,DNK
 Djibouti,23.9,DJI
 Dominica,33.5,DMA
-Dominican Republic,28.1,DOM
+Dominican Rep.,28.1,DOM
 Ecuador,27.7,ECU
 Egypt,23.9,EGY
 El Salvador,27.1,SLV
@@ -185,7 +185,7 @@ Slovenia,44.5,SVN
 Solomon Islands,22.5,SLB
 Somalia,18.1,SOM
 South Africa,27.1,ZAF
-South Sudan,17.3,SSD
+S. Sudan,17.3,SSD
 Spain,42.7,ESP
 Sri Lanka,32.8,LKA
 Sudan,19.9,SDN

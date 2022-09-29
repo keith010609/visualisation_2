@@ -49,7 +49,7 @@ United Kingdom,83.9,GBR
 The Bahamas,83.2,BHS
 Norway,83,NOR
 United States of America,82.7,USA
-Dominican Republic,82.5,DOM
+Dominican Rep.,82.5,DOM
 Canada,81.6,CAN
 South Korea,81.4,KOR
 Colombia,81.4,COL
@@ -94,7 +94,7 @@ Mongolia,68.7,MNG
 Panama,68.4,PAN
 Latvia,68.3,LVA
 Lithuania,68,LTU
-Republic of the Congo,67.8,COG
+ Congo,67.8,COG
 Montenegro,67.5,MNE
 South Africa,67.4,ZAF
 Cyprus,66.8,CYP
@@ -165,7 +165,7 @@ Moldova,42.8,MDA
 Faroe Islands,42.4,FRO
 Togo,42.8,TGO
 Bhutan,42.3,BTN
-Central African Republic,42.2,CAF
+Central African Rep.,42.2,CAF
 Eritrea,41.3,ERI
 Mauritius,40.8,MUS
 Maldives,40.7,MDV
@@ -207,7 +207,7 @@ Chad,23.5,TCD
 Tonga,23.1,TON
 Ethiopia,21.7,ETH
 Nepal,20.6,NPL
-South Sudan,20.2,SSD
+S. Sudan,20.2,SSD
 Saint Lucia,18.8,LCA
 Sri Lanka,18.7,LKA
 Rwanda,17.4,RWA

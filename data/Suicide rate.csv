@@ -29,7 +29,7 @@ Cambodia,5.9,KHM
 Cameroon,19.5,CMR
 Canada,10.4,CAN
 Cape Verde,15.1,CPV
-Central African Republic,11.6,CAF
+Central African Rep.,11.6,CAF
 Chad,15.5,TCD
 Chile,9.7,CHL
 China,8,CHN
@@ -43,7 +43,7 @@ Czech Republic,10.5,CZE
 Dem. Rep. Congo,9.7,COD
 Denmark,9.2,DNK
 Djibouti,8.5,DJI
-Dominican Republic,10.5,DOM
+Dominican Rep.,10.5,DOM
 East Timor,6.4,TLS
 Ecuador,7.2,ECU
 Egypt,4.4,EGY
@@ -130,7 +130,7 @@ Philippines,3.7,PHL
 Poland,13.4,POL
 Portugal,8.6,PRT
 Qatar,5.8,QAT
-Republic of the Congo,9.3,COG
+ Congo,9.3,COG
 Romania,8,ROU
 Russia,26.5,RUS
 Rwanda,11,RWA
@@ -149,7 +149,7 @@ Solomon Islands,5.9,SLB
 Somalia,8.3,SOM
 South Africa,12.8,ZAF
 South Korea,20.2,KOR
-South Sudan,6.1,SSD
+S. Sudan,6.1,SSD
 Spain,6.1,ESP
 Sri Lanka,14.2,LKA
 Sudan,9.5,SDN

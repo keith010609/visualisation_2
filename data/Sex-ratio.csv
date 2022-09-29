@@ -36,14 +36,14 @@ Cameroon,0.99,CMR
 Canada,0.98,CAN
 Cape Verde,0.95,CPV
 Cayman Islands,0.95,CYM
-Central African Republic,0.99,CAF
+Central African Rep.,0.99,CAF
 Chad,0.98,TCD
 Chile,0.97,CHL
 China,1.06,CHN
 Colombia,0.98,COL
 Comoros,0.94,COM
 Dem. Rep. Congo,1,COD
-Republic of the Congo,1.01,COG
+ Congo,1.01,COG
 Cook Islands,1.06,COK
 Costa Rica,1,CRI
 Croatia,0.93,HRV
@@ -54,7 +54,7 @@ Czech Republic,0.97,CZE
 Denmark,0.99,DNK
 Djibouti,0.83,DJI
 Dominica,1.02,DMA
-Dominican Republic,1.02,DOM
+Dominican Rep.,1.02,DOM
 Ecuador,0.99,ECU
 Egypt,1.05,EGY
 El Salvador,0.92,SLV
@@ -187,7 +187,7 @@ Slovenia,1,SVN
 Solomon Islands,1.04,SLB
 Somalia,1.02,SOM
 South Africa,0.98,ZAF
-South Sudan,1.06,SSD
+S. Sudan,1.06,SSD
 Spain,0.98,ESP
 Sri Lanka,0.95,LKA
 Sudan,1.01,SDN
