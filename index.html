@@ -21,6 +21,7 @@
   </div>
 
   <div class="choropleth_map">
+    <t><b>World Suicide rate</b><br></t>
     <div id="choropleth_map"></div>
       <script type="text/javascript">
 
@@ -31,8 +32,24 @@
       </script>
   </div>
 
-  <div class = "description1"><p>Descriptions for map.</p></div>
+  <div class = "description1">
+    <t><b>Suicide rate as per data published by the World Health Organization (WHO)</b><br></t>
+    <dl>
+      <dt>&#128128;<p1 style = "color:red;"><b>Highest Suicide rate</b><br></p1></dt>
+      <dd><p2>&#9733;<mark class ="red">Guyana</mark> has the highest suicide rate which is <mark class ="red">30.2</mark>.<br></p2></dd>
+      <dt>&#128128;<p1 style = "color:green;"><b>Lowest Suicide rate</b><br></p1></dt>
+      <dd><p2>&#9733;<mark class ="green">Jamaica</mark> has the lowest suicide rate which is <mark class ="green">2</mark>.<br></p2></dd>
+      <dt>&#128128;<p1 style = "color:darkorchid;"><b>Summary</b><br></p1></dt>
+      <dd><p2>Overall <mark class ="green">South America</mark> shows a lower suicide rate, where countries except <br>
+        <mark class ="red">Guyana, Bolivia </mark> and <mark class ="red">Uruguay</mark> have a suicide rate below 10. The region with <br>
+        the highest suicide rate is <mark class ="red">Russia</mark> and its nearby countries including <br>
+        <mark class ="red">Belarus</mark> and <mark class ="red">Kazakhstan</mark>, with suicide rates over 20. <br></p2></dd>
+    </dl>
+    
+  </div>
 
+  <div class = "description4"><p>Descriptions for dot-plot.</p></div>
+  
   <div class = "dotplot">
     <div id="stacked_bar_chart"></div>
       <script type="text/javascript">
@@ -46,7 +63,7 @@
           }).catch(console.error);
       </script>
   </div>
-  <div class = "description4"><p>Descriptions for dot-plot.</p></div>
+  
   <div class = "description2"><p>Descriptions for isotype</p></div>
 
   <div class = "isotype_dot">

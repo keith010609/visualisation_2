@@ -1,3 +1,12 @@
+#choropleth_map {
+	top:10px;
+	bottom: 100px; 
+	left: 20px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}
+
 h1 {
 	font-size: 40px;
 	color: darkblue;
@@ -6,16 +15,38 @@ h1 {
 }
 h2 {
 	font-size: 20px;
-	color:blue;
-  	text-align: center;
+	text-align: center;
+	color: blue;
 }
-p {
+
+t {
+	font-size: 19px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: darkslateblue;
+}
+p1 {
+	font-size: 18px;
+	text-anchor: start;
+}
+p2 {
 	font-size: 15px;
 }
+mark.red {
+    color:red;
+    background: none;
+	font-weight: bold;
+}
+mark.green {
+    color:green;
+    background: none;
+	font-weight: bold;
+}
+
 .head { grid-area: header; }
 .choropleth_map { grid-area: map; text-align: center;}
 .dotplot {grid-area: dotplot; text-align: center;}
-.description1 { grid-area: description1; font-family: Arial, Helvetica, sans-serif;text-align: center;}
+.description1 { grid-area: description1; 
+	font-family: Arial, Helvetica, sans-serif; text-align: center;}
 .description2 { grid-area: description2; font-family: Arial, Helvetica, sans-serif;text-align: center;}
 .isotype_dot { grid-area: isotype_dot; text-align: center;}
 .barchart1 {grid-area: barchart1; text-align: center;}
@@ -28,10 +59,10 @@ p {
 	grid-template:
 	  'header header'
 	  'map description1'
-	  'dotplot description4'
-	  'description2 isotype_dot'
-	  'barchart1 description3'
-	  'barchart2 description3';
+	  'description4 dotplot '
+	  'isotype_dot description2'
+	  'description3 barchart1'
+	  'description3 barchart2';
 	grid-gap: 10px;
 	background-color: #2196F3;
 	padding: 10px;
@@ -42,3 +73,4 @@ background-color: rgba(255, 255, 255, 0.8);
 padding: 10px 0;
 font-size: 30px;
 }
+
