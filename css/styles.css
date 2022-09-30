@@ -6,6 +6,41 @@
 	/*height: 1000px;
 	width: 800px;*/
 }
+#dot_plot{
+	top:10px;
+	bottom: 100px; 
+	left: 20px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}
+
+#isotype_dot_plot{
+	top:10px;
+	bottom: 100px; 
+	left: 20px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}
+
+#barchart1{
+	top:10px;
+	bottom: 100px; 
+	left: 0px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}
+
+#barchart{
+	top:10px;
+	bottom: 100px; 
+	left: 0px;
+	right: 100px;
+	/*height: 1000px;
+	width: 800px;*/
+}
 
 h1 {
 	font-size: 40px;

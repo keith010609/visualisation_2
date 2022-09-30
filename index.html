@@ -6,7 +6,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-  
+
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
@@ -62,6 +62,34 @@
 
   <!-- Dot plot -->
   <div class = "dotplot">
+    <t><b>Life expectancy Chart</b><br></t>
+    <p2><b>&#128308; Median age   &#128309; Life expectancy</b><br></p2>
+    <div id="dot_plot"></div>
+    <div>
+      <input id=lifeNext type=number min=1 max=6 value = 1>
+      <button onclick="decrement_1()">Prev</button>
+      <button onclick="increment_1()">Next</button>
+    </div>
+    <script>
+      function life(){
+        counter = document.getElementById('lifeNext').value;
+          var spec2 = `js/dot_plot_${counter}.vg.json`;
+
+          vegaEmbed('#dot_plot', spec2).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+      }
+      
+      function increment_1() {
+          document.getElementById('lifeNext').stepUp();
+          life();
+      }
+      function decrement_1() {
+          document.getElementById('lifeNext').stepDown();
+          life();
+      }
+      life();
+    </script>
   </div>
   
   <div class = "description2">
@@ -77,21 +105,49 @@
 
   <!-- Isotype Dot plot -->
   <div class = "isotype_dot">
+    <t><b>Meat consumption</b><br></t>
+    <div id="isotype_dot_plot"></div>
+    <script type="text/javascript">
+        // var spec2 = "js/isotype_dot_plot.vg.json";
+        var spec2 = "js/isotype_dot.vg.json"
+
+        vegaEmbed('#isotype_dot_plot', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
   </div>
 
   <!-- Bar plot -->
-  <div class = "barchart1"> 
-    <div id="stacked_bar_chart"></div>
-      <script type="text/javascript">
-          var data_location = "data/COVID_19.csv"
+  <div class = "barchart1">
+    <t><b>Sex ratio</b><br></t>
+    <div>
+      <input id=SexRatioNext type=number min=1 max=7 value = 1>
+      <button onclick="decrement_2()">Prev</button>
+      <button onclick="increment_2()">Next</button>
+    </div>  
+    <div id="barchart1"> 
+    <script type="text/javascript">
+      
+      function sexRatio(){
+        counter = document.getElementById('SexRatioNext').value;
+        var spec2 = `js/barchart_s_${counter}.vg.json`;
 
-          // var spec2 = "js/stacked_bar_chart.vg.json";
-          var spec2 = "js/stacked_bar_chart.vg.json"
-
-          vegaEmbed('#stacked_bar_chart', spec2).then(function(result) {
-              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-          }).catch(console.error);
-      </script>
+        vegaEmbed('#barchart1', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      }
+      
+      function increment_2() {
+          document.getElementById('SexRatioNext').stepUp();
+          sexRatio();
+      }
+      function decrement_2() {
+          document.getElementById('SexRatioNext').stepDown();
+          sexRatio();
+      }
+      sexRatio();
+    </script>
+    </div> 
   </div>
 
   <div class = "description3">
@@ -120,27 +176,42 @@
 
   <!-- Bar plot -->
   <div class = "barchart2"> 
+    <t><b>Population Growth Chart</b><br></t>
+    <div>
+      <input id=PopulationNext type=number min=1 max=8 value = 1>
+      <button onclick="decrement_3()">Prev</button>
+      <button onclick="increment_3()">Next</button>
+    </div>  
+    <div id="barchart"> 
+    <script type="text/javascript">
+      
+      function population(){
+        counter = document.getElementById('PopulationNext').value;
+          var spec2 = `js/barchart_${counter}.vg.json`;
+
+          vegaEmbed('#barchart', spec2).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+      }
+      
+      function increment_3() {
+          document.getElementById('PopulationNext').stepUp();
+          population();
+      }
+      function decrement_3() {
+          document.getElementById('PopulationNext').stepDown();
+          population();
+      }
+      population()
+      
+    </script>
+    </div>
     
   </div>
 
 
 </div>
 
-
-
-
-<!-- <div id="stacked_bar_chart"></div>
-
-    <script type="text/javascript">
-        var data_location = "data/COVID_19.csv"
-
-        // var spec2 = "js/stacked_bar_chart.vg.json";
-        var spec2 = "js/stacked_bar_chart.vg.json"
-
-        vegaEmbed('#stacked_bar_chart', spec2).then(function(result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-</script> -->
 
 </body>
 </html>
