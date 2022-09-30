@@ -10,7 +10,7 @@
           "op": "rank",
           "as": "rank"
         }],
-        "sort": [{ "field": "Country", "order": "ascending" }]
+        "sort": [{ "field": "Sex-ratio", "order": "ascending" }]
       }, {
         "filter": "datum.rank >99 && datum.rank<=132"
       }
@@ -29,7 +29,7 @@
           
       },
       "x": {"field": "Country", "type": "nominal", "title": "Country","sort":{"field":"Sex-ratio"}},
-      "y": {"field": "Sex-ratio","type": "quantitative", "title": "Sex-ratio", "scale": {"domain": [0.8, 1.4]}},
+      "y": {"field": "Sex-ratio","type": "quantitative", "title": "Sex-ratio", "scale": {"domain": [0,1]}},
       "tooltip":[
         {"field": "Country", "type": "nominal", "title": "Country"},
         {"field": "Sex-ratio", "type": "quantitative", "title": "Sex-ratio"}

@@ -10,7 +10,7 @@
           "op": "rank",
           "as": "rank"
         }],
-        "sort": [{ "field": "Country", "order": "ascending" }]
+        "sort": [{ "field": "Population growth", "order": "ascending" }]
       }, {
         "filter": "datum.rank >79 && datum.rank <=104"
       }
