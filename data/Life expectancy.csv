@@ -30,8 +30,8 @@ Cameroon,58.9,CMR
 Canada,82.3,CAN
 Cape Verde,72.8,CPV
 Central African Rep.,52.8,CAF
-Chad,54,TCD
-Chile,80,CHL
+Chad,54.0,TCD
+Chile,80.0,CHL
 China,76.7,CHN
 Colombia,77.1,COL
 Comoros,64.1,COM
@@ -65,7 +65,7 @@ Greenland,71.25,GRL
 Grenada,72.4,GRD
 Guatemala,74.1,GTM
 Guinea,61.2,GIN
-Guinea,58,GIN
+Guinea,58.0,GIN
 Guyana,69.8,GUY
 Haiti,63.7,HTI
 Honduras,75.1,HND
@@ -105,27 +105,25 @@ Malta,82.4,MLT
 Marshall Islands,73.9,MHL
 Mauritania,64.7,MRT
 Mauritius,74.9,MUS
-Mexico,75,MEX
+Mexico,75.0,MEX
 Micronesia,67.8,FSM
 Moldova,71.8,MDA
 Mongolia,69.7,MNG
 Montenegro,76.8,MNE
 Morocco,76.5,MAR
 Mozambique,60.2,MOZ
-Myanmar,66.9,MMR
 Namibia,63.4,NAM
 Nepal,70.5,NPL
 Netherlands,82.1,NLD
 New Zealand,82.1,NZL
 Nicaragua,74.3,NIC
-Niger,62,NER
+Niger,62.0,NER
 Nigeria,54.3,NGA
 North Macedonia,75.7,MKD
 Norway,82.5,NOR
 Oman,77.6,OMN
 Pakistan,67.1,PAK
 Palau,73.7,PLW
-Palestine,73.9,PSE
 Panama,78.3,PAN
 Papua New Guinea,64.3,PNG
 Paraguay,74.1,PRY
@@ -142,7 +140,7 @@ Saint Lucia,76.1,LCA
 Saint Vincent and the Grenadines,72.4,VCT
 Samoa,73.2,WSM
 Sao Tome and Principe,70.2,STP
-Saudi Arabia,75,SAU
+Saudi Arabia,75.0,SAU
 Senegal,67.7,SEN
 Serbia,75.8,SRB
 Seychelles,73.3,SYC
@@ -161,7 +159,7 @@ Suriname,71.6,SUR
 Sweden,82.7,SWE
 Syria,71.8,SYR
 Tajikistan,70.9,TJK
-Tanzania,65,TZA
+Tanzania,65.0,TZA
 Thailand,76.9,THA
 The Bahamas,73.8,BHS
 The Gambia,61.7,GMB
@@ -171,8 +169,8 @@ Trinidad and Tobago,73.4,TTO
 Tunisia,76.5,TUN
 Turkey,78.3,TUR
 Turkmenistan,68.1,TKM
-Uganda,63,UGA
-Ukraine,72,UKR
+Uganda,63.0,UGA
+Ukraine,72.0,UKR
 United Arab Emirates,77.8,ARE
 United Kingdom,81.2,GBR
 United States of America,78.9,USA
