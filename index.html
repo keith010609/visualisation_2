@@ -107,15 +107,34 @@
   <!-- Isotype Dot plot -->
   <div class = "isotype_dot">
     <t><b>Meat consumption</b><br></t>
-    <div id="isotype_dot_plot"></div>
+    <div>
+      <p2>Page</p2>
+      <input id=meatNext type=number min=1 max=4 value = 1>
+      <button onclick="decrement_4()">Prev</button>
+      <button onclick="increment_4()">Next</button>
+    </div>  
+    <div id="isotype_dot_plot"> 
     <script type="text/javascript">
-        // var spec2 = "js/isotype_dot_plot.vg.json";
-        var spec2 = "js/isotype_dot.vg.json"
-
+      
+      function meat(){
+        counter = document.getElementById('meatNext').value;
+        var spec2 = `js/isotype_dot_${counter}.vg.json`;
         vegaEmbed('#isotype_dot_plot', spec2).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
+      }
+      
+      function increment_4() {
+          document.getElementById('meatNext').stepUp();
+          meat();
+      }
+      function decrement_4() {
+          document.getElementById('meatNext').stepDown();
+          meat();
+      }
+      meat();
     </script>
+    </div> 
   </div>
 
   <!-- Bar plot -->
