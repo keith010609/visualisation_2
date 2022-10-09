@@ -1,38 +1,121 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "config": {"view": {"stroke": ""}},
-    "width": 500,
-    "height": 100,
-    "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Population%20growth.csv"},
-    "transform": [
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {"view": {"stroke": ""}},
+  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Population%20growth.csv"},
+  "transform": [{"calculate": "toNumber(datum['Population growth'])", "as": "PopGrowth"}],
+  "vconcat": [{
+    "width": 700,
+    "height": 240,
+    
+    "layer": [
       {
-        "window": [{
-          "op": "rank",
-          "as": "rank"
+        "mark": "bar",
+        "transform": [{
+        "filter": {"param": "brush"} 
         }],
-        "sort": [{ "field": "Population growth", "order": "ascending" }]
-      }, {
-        "filter": "datum.rank <= 26"
+        "encoding": {
+          "color": {
+            "field": "PopGrowth",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [0],
+              "range": ["red", "blue"]
+              }
+          },
+            "x": {
+                "field": "Country",
+                "type": "nominal",
+                "axis": { "title": "Country", "tickCount": 20},
+                "sort":{"field": "PopGrowth"} 
+            },
+            "y": { "field": "Population growth", "type": "quantitative" },
+            
+            "tooltip":[
+              {"field": "Country", "type": "nominal", "title": "Country"},
+              {"field": "Population growth", "type": "quantitative", "title": "Population growth"}
+            ]
       }
-    ],
-    "mark": "bar",
-    "encoding": {
-      "color": {
-        "field": "Population growth",
-        "title": "Population growth",
-        "type": "quantitative",
-        "scale": {
-          "type": "threshold",
-          "domain": [0],
-          "range": ["red", "blue"]
-          }
-          
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "PopGrowth", "order": "descending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "datum['Country'] + ' has the highest; population growth: ' + datum['Population growth']",
+          "as": "text_annotation_raw"
+        },
+        {
+          "calculate": "split(datum.text_annotation_raw, ';')",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize":14,
+        "align": "right",
+        "dx": 300,
+        "dy": -80,
+        "baseline": "middle",
+        "fontStyle": "italic",
+        "color": "limegreen"
       },
-      "x": {"field": "Country", "type": "nominal", "title": "Country","sort":{"field":"Population growth"}},
-      "y": {"field": "Population growth","type": "quantitative", "title": "Population growth"},
-      "tooltip":[
-        {"field": "Country", "type": "nominal", "title": "Country"},
-        {"field": "Population growth", "type": "quantitative", "title": "Population growth"}
-      ]
+      "encoding": {"text": {"field": "text_annotation"}}
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "PopGrowth", "order": "ascending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "datum['Country'] + ' has the lowest; population growth: ' + datum['Population growth']",
+          "as": "text_annotation_raw"
+        },
+        {
+          "calculate": "split(datum.text_annotation_raw, ';')",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize":14,
+        "align": "right",
+        "dx": -40,
+        "dy": 90,
+        "baseline": "middle",
+        "fontStyle": "italic",
+        "color": "orangered"
+      },
+      "encoding": {"text": {"field": "text_annotation"}}
     }
-}
+  ]  
+    
+
+}, {
+    "width": 700,
+    "height": 60,
+    "mark": "bar",
+    "params": [{
+        "name": "brush",
+        "select": { "type": "interval","encodings": ["x"]}
+    }],
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "nominal",
+            "axis": null,
+            "sort":{"field": "PopGrowth"}      
+          },
+        "y": {
+            "field": "Population growth",
+            "type": "quantitative",
+            "axis": { "tickCount": 3, "grid": false }
+        }
+    }
+}]
+}         
