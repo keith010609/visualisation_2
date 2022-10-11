@@ -105,13 +105,14 @@
             "fields": ["Suicide rate","Country"]
           }
         },
+        {"calculate": "toNumber(datum['Suicide rate'])", "as": "SuiRate"},
         {
           "window": [{"op": "rank", "as": "ranking"}],
-          "sort": [{"field": "Suicide rate", "order": "descending"}]
+          "sort": [{"field": "SuiRate", "order": "descending"}]
         },
-        {"filter": "datum.ranking == 1"},
+        {"filter": "datum['SuiRate'] < 1"},
         {
-          "calculate": "datum['Country'] + ' has the lowest; Suicide rate: ' + datum['Suicide rate']",
+          "calculate": "'Barbados' + ' has the lowest; Suicide rate: ' + '0.4'",
           "as": "text_annotation_raw"
         },
         {
