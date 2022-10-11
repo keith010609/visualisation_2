@@ -1,39 +1,123 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "config": {"view": {"stroke": ""}},
-    "width": 500,
-    "height": 300,
-    "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Sex-ratio.csv"},
-    "transform": [
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {"view": {"stroke": ""}},
+  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Sex-ratio.csv"},
+  "transform": [{"calculate": "toNumber(datum['Sex-ratio'])", "as": "SexRatio"}],
+  "vconcat": [{
+    "width": 700,
+    "height": 240,
+    
+    "layer": [
       {
-        "window": [{
-          "op": "rank",
-          "as": "rank"
+        "mark": "bar",
+        "transform": [{
+        "filter": {"param": "brush"} 
         }],
-        "sort": [{ "field": "Sex-ratio", "order": "ascending" }]
-      }, {
-        "filter": "datum.rank <= 32"
+        "encoding": {
+          "color": {
+            "field": "SexRatio",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [1],
+              "range": ["pink", "blue"]
+              }
+          },
+            "x": {
+                "field": "Country",
+                "type": "nominal",
+                "axis": { "title": "Country", "tickCount": 20},
+                "sort":{"field": "SexRatio"} 
+            },
+            "y": { "field": "Sex-ratio", "type": "quantitative" },
+            
+            "tooltip":[
+              {"field": "Country", "type": "nominal", "title": "Country"},
+              {"field": "Sex-ratio", "type": "quantitative", "title": "Sex-ratio"}
+            ],
+            "y2": {"datum": 1}
       }
-    ],
-    "mark": "bar",
-    "encoding": {
-      "color": {
-        "field": "Sex-ratio",
-        "title": "Sex-ratio",
-        "type": "quantitative",
-        "scale": {
-          "type": "threshold",
-          "domain": [1],
-          "range": ["pink", "blue"]
-          }
-          
-      },
-      "x": {"field": "Country", "type": "nominal", "title": "Country","sort":{"field":"Sex-ratio"}},
-      "y": {"field": "Sex-ratio","type": "quantitative", "title": "Sex-ratio", "scale": {"domain": [0, 1]}},
-      "tooltip":[
-        {"field": "Country", "type": "nominal", "title": "Country"},
-        {"field": "Sex-ratio", "type": "quantitative", "title": "Sex-ratio"}
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "SexRatio", "order": "descending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "datum['Country'] + ' has the highest; Sex-ratio: ' + datum['Sex-ratio']",
+          "as": "text_annotation_raw"
+        },
+        {
+          "calculate": "split(datum.text_annotation_raw, ';')",
+          "as": "text_annotation"
+        }
       ],
-      "y2": {"datum": 1}
+      "mark": {
+        "type": "text",
+        "fontSize":14,
+        "align": "right",
+        "dx": 300,
+        "dy": -80,
+        "baseline": "middle",
+        "fontStyle": "italic",
+        "color": "limegreen"
+      },
+      "encoding": {"text": {"field": "text_annotation"}}
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "SexRatio", "order": "ascending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "datum['Country'] + ' has the lowest; Sex-ratio: ' + datum['Sex-ratio']",
+          "as": "text_annotation_raw"
+        },
+        {
+          "calculate": "split(datum.text_annotation_raw, ';')",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize":14,
+        "align": "right",
+        "dx": -40,
+        "dy": 90,
+        "baseline": "middle",
+        "fontStyle": "italic",
+        "color": "orangered"
+      },
+      "encoding": {"text": {"field": "text_annotation"}}
     }
-}
+  ]  
+    
+
+}, {
+    "width": 700,
+    "height": 60,
+    "mark": "bar",
+    "params": [{
+        "name": "brush",
+        "select": { "type": "interval","encodings": ["x"]}
+    }],
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "nominal",
+            "axis": null,
+            "sort":{"field": "SexRatio"}      
+          },
+        "y": {
+            "field": "Sex-ratio",
+            "type": "quantitative",
+            "axis": { "tickCount": 3, "grid": false }
+        },
+        "y2": {"datum": 1}
+    }
+}]
+}         

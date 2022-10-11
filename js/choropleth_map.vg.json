@@ -2,8 +2,42 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 700,
   "height": 400,
-  "projection": {"type": "equalEarth"},
   
+  "params": [
+    {
+        "name": "zoom_level",
+        "value": 130,
+        "bind": {
+            "input": "range",
+            "min": 130,
+            "max": 300,
+            "step": 10,
+            "name": "Zoom: "
+        }
+    },
+    {
+        "name": "center_to",
+        "value": [0,0],
+        "bind": {
+            "input": "select",
+            "options": [
+                [0,0],
+                [83,51],
+                [16,47],
+                [-60,-7],
+                [-100,50],
+                [10,20],
+                [130,-24]
+            ],
+            "labels": ["Centre","Asia", "Europe", "South America", "North America","Africa","Oceania"],
+            "name": "Map Centre: "
+        }
+    }
+],
+  "projection": {"type": "equalEarth",
+        "center": { "expr": "center_to" },
+        "scale": { "expr": "zoom_level" }
+    },
   "data": {
     "url": "https://raw.githubusercontent.com/keith010609/homework_9/main/js/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -59,7 +93,84 @@
           {"field": "ISO-code", "type": "nominal", "title": "ISO-code"}
         ]
       }
+    },{
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Suicide%20rate.csv"
+            },
+            "key": "Country",
+            "fields": ["Suicide rate","Country"]
+          }
+        },
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "Suicide rate", "order": "descending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "datum['Country'] + ' has the lowest; Suicide rate: ' + datum['Suicide rate']",
+          "as": "text_annotation_raw"
+        },
+        {
+          "calculate": "split(datum.text_annotation_raw, ';')",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize":14,
+        "align": "right",
+        "dx": -180,
+        "dy": 90,
+        "baseline": "middle",
+        "fontStyle": "italic",
+        "color": "green"
+      },
+      "encoding": {"text": {"field": "text_annotation"}}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Suicide%20rate.csv"
+            },
+            "key": "Country",
+            "fields": ["Suicide rate","Country"]    
+          }
+        },
+        {"calculate": "toNumber(datum['Suicide rate'])", "as": "SuiRate"},
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "SuiRate", "order": "descending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "datum['Country'] + ' has the highest; Suicide rate: ' + datum['Suicide rate']",
+          "as": "text_annotation_raw"
+        },
+        {
+          "calculate": "split(datum.text_annotation_raw, ';')",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize":14,
+        "align": "right",
+        "dx": -190,
+        "dy": 10,
+        "baseline": "middle",
+        "fontStyle": "italic",
+        "color": "red"
+      },
+      "encoding": {"text": {"field": "text_annotation"}}
     }
+
   ]
 }
 

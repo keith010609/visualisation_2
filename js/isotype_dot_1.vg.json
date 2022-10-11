@@ -1,41 +1,68 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "width": 500,
-  "height": 600,
-  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Meat%20consumption.csv"},
-  "transform": [
-  {
-    "window": [{
-      "op": "rank",
-      "as": "rank"
-    }]
-  }, {"filter": "datum.rank <= 188/4"}],
-
-  "layer":[{
-    "mark": {"type":"bar", "baseline": "middle"},
+  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Meat%20consumption.csv" },
+  "transform": [{"calculate": "toNumber(datum['Meat consumption'])", "as": "MeatConsumption"}],
+  "hconcat": [{
+    "width": 400,
+    "height": 500,
+    "transform": [{
+      "filter": {"param": "brush"}
+    }],
+    "layer": [
+      {
+        "mark": {"type":"bar", "baseline": "middle"},
+        "encoding": {
+          "x": {"aggregate": "sum","field": "MeatConsumption","type": "quantitative"},
+          "y": {"field": "Country", "type": "nominal","sort":"-x"},
+          "size": {"value": 2},
+          "tooltip":[
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Meat consumption", "type": "quantitative", "title": "Meat consumption"}
+          ],
+          "color":{
+            "field": "Meat consumption",
+            "title": "Meat consumption",
+            "type": "quantitative",
+            "scale": {"type": "log"}
+          }
+        }
+        },
+      {
+        "mark": {"type":"text", "align": "right","xOffset":40},
+        "encoding": {
+          "x": {"aggregate": "sum","field": "MeatConsumption","type": "quantitative"},
+          "y": {"field": "Country", "type": "nominal","sort":"-x"},
+          "text": {"field": "Meat consumption", "type": "nominal"},
+          "size": {"value": 10},
+          "tooltip":[
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Meat consumption", "type": "quantitative", "title": "Meat consumption"}
+          ]
+      }
+      }
+  
+    ]
+  }, {
+    "height": 200,
+    "width": 50,
+    "params": [{
+      "name": "brush",
+      "select": {
+        "type": "interval",
+        "encodings": ["y"]
+      }
+    }],
+    "mark": "bar",
     "encoding": {
-      "x": {"aggregate": "sum","field": "Meat consumption","type": "quantitative"},
-      "y": {"field": "Country", "type": "nominal","sort":"-x"},
-      "size": {"value": 2},
-      "tooltip":[
-        {"field": "Country", "type": "nominal", "title": "Country"},
-        {"field": "Meat consumption", "type": "quantitative", "title": "Meat consumption"}
-      ]
+      "y": {
+        "field": "Country",
+        "type": "nominal",
+        "sort": "-x",
+        "axis": null
+      },
+      "x": { "field": "MeatConsumption", "type": "quantitative", "axis": null }
     }
-    },
-  {
-    "mark": {"type":"text", "align": "right","xOffset":40},
-    "encoding": {
-      "x": {"aggregate": "sum","field": "Meat consumption","type": "quantitative"},
-      "y": {"field": "Country", "type": "nominal","sort":"-x"},
-      "text": {"field": "Meat consumption", "type": "nominal"},
-      "size": {"value": 10},
-      "tooltip":[
-        {"field": "Country", "type": "nominal", "title": "Country"},
-        {"field": "Meat consumption", "type": "quantitative", "title": "Meat consumption"}
-      ]
-  }
   }]
   
 }

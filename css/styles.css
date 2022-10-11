@@ -5,6 +5,9 @@
 	right: 100px;
 	/*height: 1000px;
 	width: 800px;*/
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: darkslateblue;
 }
 #dot_plot{
 	top:10px;
@@ -94,7 +97,7 @@ mark.green {
 	display: grid;
 	grid-template:
 	  'header header header header'
-	  'map description1 description1 description1'
+	  'map map description1 description1'
 	  'description4 dotplot dotplot dotplot'
 	  'isotype_dot isotype_dot description2 description2'
 	  'description3 barchart1 barchart1 barchart1'

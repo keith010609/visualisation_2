@@ -1,22 +1,16 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {"view": {"stroke": ""}},
+  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
+  "hconcat": [{
     "width": 400,
     "height": 500,
+    "transform": [{
+      "filter": {"param": "brush"}
+    }],
     "layer": [
       {
-        "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
-        "transform": [
-          {
-            "window": [{
-              "op": "rank",
-              "as": "rank"
-            }],
-            "sort": [{ "field": "Life expectancy", "order": "descending" }]
-          }, {
-            "filter": "datum.rank <= 32"
-          }
-        ],
-        "mark": { "type": "point" , "color":"red"},
+        "mark": { "type": "point" , "color":"red","fill":"Red"},
         "encoding": {
             "x": { "field": "Median age", "type": "quantitative" },
             "y": { "field": "Country" , "type": "ordinal","sort":{"field":"Life expectancy","order":"descending"}},
@@ -25,20 +19,9 @@
               {"field": "Median age", "type": "quantitative", "title": "Median age"}
             ]
         }
-      },{
-        "data": { "url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
-        "transform": [
-            {
-              "window": [{
-                "op": "rank",
-                "as": "rank"
-              }],
-              "sort": [{ "field": "Life expectancy", "order": "descending" }]
-            }, {
-              "filter": "datum.rank <= 32"
-            }
-          ],
-        "mark": { "type": "point", "color":"blue" },
+      }
+      ,{
+        "mark": { "type": "point", "color":"blue" ,"fill":"blue"},
         "encoding": {
             "x": { "field": "Life expectancy", "type": "quantitative" },
             "y": { "field": "Country" , "type": "ordinal","sort":{"field":"Life expectancy","order":"descending"}},
@@ -48,6 +31,28 @@
             ]
         }
       }
+  
     ]
-    
+  }, {
+    "height": 200,
+    "width": 50,
+    "params": [{
+      "name": "brush",
+      "select": {
+        "type": "interval",
+        "encodings": ["y"]
+      }
+    }],
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Country",
+        "type": "nominal",
+        "sort": "-x",
+        "axis": null
+      },
+      "x": { "field": "Median age", "type": "quantitative", "axis": null }
+    }
+  }]
+  
 }
