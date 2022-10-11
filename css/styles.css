@@ -80,36 +80,45 @@ mark.green {
 	font-weight: bold;
 }
 
-.head { grid-area: header; }
-.choropleth_map { grid-area: map; text-align: center;}
-.dotplot {grid-area: dotplot; text-align: center;}
+.head { grid-area: header;font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);}
+.choropleth_map { grid-area: map; text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.dotplot {grid-area: dotplot; text-align: center;background-color: rgba(255, 255, 255, 0.8);}
 .description1 { grid-area: description1; 
-	font-family: Arial, Helvetica, sans-serif; text-align: center;}
-.description2 { grid-area: description2; font-family: Arial, Helvetica, sans-serif;text-align: center;}
-.isotype_dot { grid-area: isotype_dot; text-align: center;}
-.barchart1 {grid-area: barchart1; text-align: center;}
-.barchart2 {grid-area: barchart2; text-align: center;}
-.description3 { grid-area: description3; font-family: Arial, Helvetica, sans-serif;text-align: center;}
-.description4 { grid-area: description4; font-family: Arial, Helvetica, sans-serif;text-align: center;}
-.description5 { grid-area: description5; font-family: Arial, Helvetica, sans-serif;text-align: center;}
-
+	font-family: Arial, Helvetica, sans-serif; text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.description2 { grid-area: description2; font-family: Arial, Helvetica, sans-serif;text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.isotype_dot { grid-area: isotype_dot; text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.barchart1 {grid-area: barchart1; text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.barchart2 {grid-area: barchart2; text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.description3 { grid-area: description3; font-family: Arial, Helvetica, sans-serif;text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.description4 { grid-area: description4; font-family: Arial, Helvetica, sans-serif;text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.description5 { grid-area: description5; font-family: Arial, Helvetica, sans-serif;text-align: center;background-color: rgba(255, 255, 255, 0.8);}
+.srHead { grid-area: srHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);text-align: center;}
+.leHead { grid-area: leHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);text-align: center;}
+.mcHead { grid-area: mcHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);text-align: center;}
+.srtHead { grid-area: srtHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);text-align: center;}
+.pgHead { grid-area: pgHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);text-align: center;}
 .grid-container {
 	display: grid;
 	grid-template:
 	  'header header header header'
+	  'srHead srHead srHead srHead'
 	  'map map description1 description1'
+	  'leHead leHead leHead leHead'
 	  'description4 dotplot dotplot dotplot'
+	  'mcHead mcHead mcHead mcHead'
 	  'isotype_dot isotype_dot description2 description2'
+	  'srtHead srtHead srtHead srtHead'
 	  'description3 barchart1 barchart1 barchart1'
+	  'pgHead pgHead pgHead pgHead'
 	  'description5 barchart2 barchart2 barchart2';
 	grid-gap: 10px;
-	background-color: #2196F3;
 	padding: 10px;
+	background-color: rgba(189, 182, 245, 0.8);
   }
   
 .grid-container > div {
-background-color: rgba(255, 255, 255, 0.8);
 padding: 10px 0;
 font-size: 30px;
+
 }
 
