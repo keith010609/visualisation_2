@@ -30,7 +30,7 @@
 #barchart1{
 	top:10px;
 	bottom: 100px; 
-	left: 0px;
+	left: 20px;
 	right: 100px;
 	/*height: 1000px;
 	width: 800px;*/
@@ -39,7 +39,7 @@
 #barchart{
 	top:10px;
 	bottom: 100px; 
-	left: 0px;
+	left: 20px;
 	right: 100px;
 	/*height: 1000px;
 	width: 800px;*/
@@ -108,9 +108,9 @@ mark.green {
 	  'mcHead mcHead mcHead mcHead'
 	  'isotype_dot isotype_dot description2 description2'
 	  'srtHead srtHead srtHead srtHead'
-	  'description3 barchart1 barchart1 barchart1'
+	  'barchart1 barchart1 description3 description3'
 	  'pgHead pgHead pgHead pgHead'
-	  'description5 barchart2 barchart2 barchart2';
+	  'barchart2 barchart2 description5 description5';
 	grid-gap: 10px;
 	padding: 10px;
 
