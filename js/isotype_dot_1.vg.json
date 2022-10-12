@@ -2,9 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
   "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Meat%20consumption.csv" },
-  "transform": [{"calculate": "toNumber(datum['Meat consumption'])", "as": "MeatConsumption"}],
+  "transform": [
+    {"calculate": "toNumber(datum['Meat consumption'])", "as": "MeatConsumption"},
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }]
+    }, {"filter": "datum.rank <= 30"}], 
   "hconcat": [{
-    "width": 400,
+    "width": 550,
     "height": 500,
     "transform": [{
       "filter": {"param": "brush"}
@@ -19,13 +26,7 @@
           "tooltip":[
             {"field": "Country", "type": "nominal", "title": "Country"},
             {"field": "Meat consumption", "type": "quantitative", "title": "Meat consumption"}
-          ],
-          "color":{
-            "field": "Meat consumption",
-            "title": "Meat consumption",
-            "type": "quantitative",
-            "scale": {"type": "log"}
-          }
+          ]
         }
         },
       {

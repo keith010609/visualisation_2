@@ -2,8 +2,15 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
   "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
+  "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }]
+    }, {"filter": "datum.rank <= 30"}], 
   "hconcat": [{
-    "width": 400,
+    "width": 600,
     "height": 500,
     "transform": [{
       "filter": {"param": "brush"}
