@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "width": 500,
+  "width": 700,
   "height": 600,
   "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Meat%20consumption.csv"},
   "transform": [

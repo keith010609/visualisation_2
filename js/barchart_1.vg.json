@@ -1,10 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Population%20growth.csv"},
-  "transform": [{"calculate": "toNumber(datum['Population growth'])", "as": "PopGrowth"}],
-  "vconcat": [{
-    "width": 700,
+  
+  "hconcat":[
+    {"data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Population%20growth.csv"},
+    "transform": [{"calculate": "toNumber(datum['Population growth'])", "as": "PopGrowth"},{
+      "filter":"datum['PopGrowth'] < 0.07"
+    }],
+    "vconcat": [{
+    "width": 300,
     "height": 240,
     
     "layer": [
@@ -41,34 +45,6 @@
       "transform": [
         {
           "window": [{"op": "rank", "as": "ranking"}],
-          "sort": [{"field": "PopGrowth", "order": "descending"}]
-        },
-        {"filter": "datum.ranking == 1"},
-        {
-          "calculate": "datum['Country'] + ' has the highest; population growth: ' + datum['Population growth']",
-          "as": "text_annotation_raw"
-        },
-        {
-          "calculate": "split(datum.text_annotation_raw, ';')",
-          "as": "text_annotation"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize":14,
-        "align": "right",
-        "dx": 300,
-        "dy": -80,
-        "baseline": "middle",
-        "fontStyle": "italic",
-        "color": "limegreen"
-      },
-      "encoding": {"text": {"field": "text_annotation"}}
-    },
-    {
-      "transform": [
-        {
-          "window": [{"op": "rank", "as": "ranking"}],
           "sort": [{"field": "PopGrowth", "order": "ascending"}]
         },
         {"filter": "datum.ranking == 1"},
@@ -85,11 +61,11 @@
         "type": "text",
         "fontSize":14,
         "align": "right",
-        "dx": -40,
-        "dy": 90,
+        "dx": 60,
+        "dy": 25,
         "baseline": "middle",
         "fontStyle": "italic",
-        "color": "orangered"
+        "color": "darkmagenta"
       },
       "encoding": {"text": {"field": "text_annotation"}}
     }
@@ -97,7 +73,7 @@
     
 
 }, {
-    "width": 700,
+    "width": 300,
     "height": 60,
     "mark": "bar",
     "params": [{
@@ -117,5 +93,95 @@
             "axis": { "tickCount": 3, "grid": false }
         }
     }
-}]
+}]},{"data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Population%20growth.csv"},
+"transform": [{"calculate": "toNumber(datum['Population growth'])", "as": "PopGrowth"},{
+  "filter":"datum['PopGrowth'] > 2.8"
+}],"vconcat": [{
+  "width": 300,
+  "height": 240,
+  
+  "layer": [
+    {
+      "mark": "bar",
+      "transform": [{
+      "filter": {"param": "brush"} 
+      }],
+      "encoding": {
+        "color": {
+          "field": "PopGrowth",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [0],
+            "range": ["red", "blue"]
+            }
+        },
+          "x": {
+              "field": "Country",
+              "type": "nominal",
+              "axis": { "title": "Country", "tickCount": 20},
+              "sort":{"field": "PopGrowth"} 
+          },
+          "y": { "field": "Population growth", "type": "quantitative" },
+          
+          "tooltip":[
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Population growth", "type": "quantitative", "title": "Population growth"}
+          ]
+    }
+  },
+  {
+    "transform": [
+      {
+        "window": [{"op": "rank", "as": "ranking"}],
+        "sort": [{"field": "PopGrowth", "order": "descending"}]
+      },
+      {"filter": "datum.ranking == 1"},
+      {
+        "calculate": "datum['Country'] + ' has the highest; population growth: ' + datum['Population growth']",
+        "as": "text_annotation_raw"
+      },
+      {
+        "calculate": "split(datum.text_annotation_raw, ';')",
+        "as": "text_annotation"
+      }
+    ],
+    "mark": {
+      "type": "text",
+      "fontSize":14,
+      "align": "right",
+      "dx":50,
+      "dy":27,
+      "baseline": "middle",
+      "fontStyle": "italic",
+      "color": "limegreen"
+    },
+    "encoding": {"text": {"field": "text_annotation"}}
+  }
+]  
+  
+
+}, {
+  "width": 300,
+  "height": 60,
+  "mark": "bar",
+  "params": [{
+      "name": "brush",
+      "select": { "type": "interval","encodings": ["x"]}
+  }],
+  "encoding": {
+      "x": {
+          "field": "Country",
+          "type": "nominal",
+          "axis": null,
+          "sort":{"field": "PopGrowth"}      
+        },
+      "y": {
+          "field": "Population growth",
+          "type": "quantitative",
+          "axis": { "tickCount": 3, "grid": false }
+      }
+  }
+}]}]
+  
 }         

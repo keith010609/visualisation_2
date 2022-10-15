@@ -1,12 +1,105 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Sex-ratio.csv"},
-  "transform": [{"calculate": "toNumber(datum['Sex-ratio'])", "as": "SexRatio"}],
+  "hconcat":[{  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Sex-ratio.csv"},
+  "transform": [{"calculate": "toNumber(datum['Sex-ratio'])", "as": "SexRatio"},
+  {"filter": "datum['Sex-ratio'] < 0.93"}],
   "vconcat": [{
-    "width": 700,
-    "height": 240,
+    "width": 300,
+    "height": 100,
     
+    "layer": [
+      {
+        "mark": "bar",
+        "transform": [{
+        "filter": {"param": "brush"} 
+        }],
+        "encoding": {
+          "color": {
+            "field": "SexRatio",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [1],
+              "range": ["pink", "blue"]
+              }
+          },
+            "x": {
+                "field": "Country",
+                "type": "nominal",
+                "axis": { "title": "Country", "tickCount": 20},
+                "sort":{"field": "SexRatio"} 
+            },
+            "y": { "field": "Sex-ratio", "type": "quantitative" },
+            
+            "tooltip":[
+              {"field": "Country", "type": "nominal", "title": "Country"},
+              {"field": "Sex-ratio", "type": "quantitative", "title": "Sex-ratio"}
+            ],
+            "y2": {"datum": 1}
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "ranking"}],
+          "sort": [{"field": "SexRatio", "order": "ascending"}]
+        },
+        {"filter": "datum.ranking == 1"},
+        {
+          "calculate": "datum['Country'] + ' has the lowest; Sex-ratio: ' + datum['Sex-ratio']",
+          "as": "text_annotation_raw"
+        },
+        {
+          "calculate": "split(datum.text_annotation_raw, ';')",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize":14,
+        "align": "right",
+        "dx": 60,
+        "dy": 25,
+        "baseline": "middle",
+        "fontStyle": "italic",
+        "color": "darkmagenta"
+      },
+      "encoding": {"text": {"field": "text_annotation"}}
+    }
+  ]  
+    
+
+}, {
+    "width": 300,
+    "height": 60,
+    "mark": "bar",
+    "params": [{
+        "name": "brush",
+        "select": { "type": "interval","encodings": ["x"]}
+    }],
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "nominal",
+            "axis": null,
+            "sort":{"field": "SexRatio"}      
+          },
+        "y": {
+            "field": "Sex-ratio",
+            "type": "quantitative",
+            "axis": { "tickCount": 3, "grid": false }
+        },
+        "y2": {"datum": 1}
+    }
+}]},
+{
+  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Sex-ratio.csv"},
+    "transform": [{"calculate": "toNumber(datum['Sex-ratio'])", "as": "SexRatio"},
+    {"filter": "datum['Sex-ratio'] >1.05"}],
+  "vconcat": [{
+    "width": 300,
+    "height": 100,
     "layer": [
       {
         "mark": "bar",
@@ -58,39 +151,11 @@
         "type": "text",
         "fontSize":14,
         "align": "right",
-        "dx": 300,
-        "dy": -80,
+        "dx":50,
+        "dy":27,
         "baseline": "middle",
         "fontStyle": "italic",
-        "color": "limegreen"
-      },
-      "encoding": {"text": {"field": "text_annotation"}}
-    },
-    {
-      "transform": [
-        {
-          "window": [{"op": "rank", "as": "ranking"}],
-          "sort": [{"field": "SexRatio", "order": "ascending"}]
-        },
-        {"filter": "datum.ranking == 1"},
-        {
-          "calculate": "datum['Country'] + ' has the lowest; Sex-ratio: ' + datum['Sex-ratio']",
-          "as": "text_annotation_raw"
-        },
-        {
-          "calculate": "split(datum.text_annotation_raw, ';')",
-          "as": "text_annotation"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize":14,
-        "align": "right",
-        "dx": -40,
-        "dy": 90,
-        "baseline": "middle",
-        "fontStyle": "italic",
-        "color": "orangered"
+        "color": "darkseagreen"
       },
       "encoding": {"text": {"field": "text_annotation"}}
     }
@@ -98,7 +163,7 @@
     
 
 }, {
-    "width": 700,
+    "width": 300,
     "height": 60,
     "mark": "bar",
     "params": [{
@@ -120,4 +185,6 @@
         "y2": {"datum": 1}
     }
 }]
+}]
+  
 }         
