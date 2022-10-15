@@ -110,6 +110,7 @@
         }],
         "encoding": {
           "color": {
+            "title": "Sex-ratio",
             "field": "SexRatio",
             "type": "quantitative",
             "scale": {

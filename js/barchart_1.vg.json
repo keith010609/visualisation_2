@@ -9,7 +9,7 @@
     }],
     "vconcat": [{
     "title" : "Population growth below 0",
-    "width": 350,
+    "width": 340,
     "height": 240,
     
     "layer": [
@@ -20,6 +20,7 @@
         }],
         "encoding": {
           "color": {
+            "title":"growth",
             "field": "PopGrowth",
             "type": "quantitative",
             "scale": {
@@ -74,7 +75,7 @@
     
 
 }, {
-    "width": 350,
+    "width": 340,
     "height": 20,
     "mark": "bar",
     "params": [{
@@ -110,6 +111,7 @@
       }],
       "encoding": {
         "color": {
+          "title": "growth",
           "field": "PopGrowth",
           "type": "quantitative",
           "scale": {
