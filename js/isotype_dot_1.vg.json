@@ -44,7 +44,7 @@
       },{
         "mark": { "type": "point","filled": true},
         "encoding": {
-          "x": {"aggregate": "sum","field": "MeatConsumption","type": "quantitative"},
+          "x": {"aggregate": "sum","field": "MeatConsumption","type": "quantitative","title":"Meat Consumption"},
           "y": {"field": "Country", "type": "nominal","sort":"-x"},
           "size": {"value": 70},
           "tooltip":[
