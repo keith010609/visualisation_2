@@ -73,7 +73,7 @@
 
 }, {
     "width": 350,
-    "height": 60,
+    "height": 20,
     "mark": "bar",
     "params": [{
         "name": "brush",
@@ -89,7 +89,7 @@
         "y": {
             "field": "Sex-ratio",
             "type": "quantitative",
-            "axis": { "tickCount": 3, "grid": false }
+            "axis": null
         },
         "y2": {"datum": 1}
     }
@@ -166,7 +166,7 @@
 
 }, {
     "width": 350,
-    "height": 60,
+    "height": 20,
     "mark": "bar",
     "params": [{
         "name": "brush",
@@ -182,7 +182,7 @@
         "y": {
             "field": "Sex-ratio",
             "type": "quantitative",
-            "axis": { "tickCount": 3, "grid": false }
+            "axis": null
         },
         "y2": {"datum": 1}
     }

@@ -5,10 +5,10 @@
   "hconcat":[
     {"data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Population%20growth.csv"},
     "transform": [{"calculate": "toNumber(datum['Population growth'])", "as": "PopGrowth"},{
-      "filter":"datum['PopGrowth'] < 0.07"
+      "filter":"datum['PopGrowth'] < 0"
     }],
     "vconcat": [{
-    "title" : "Population growth below 0.07",
+    "title" : "Population growth below 0",
     "width": 350,
     "height": 240,
     
@@ -75,7 +75,7 @@
 
 }, {
     "width": 350,
-    "height": 60,
+    "height": 20,
     "mark": "bar",
     "params": [{
         "name": "brush",
@@ -91,7 +91,7 @@
         "y": {
             "field": "Population growth",
             "type": "quantitative",
-            "axis": { "tickCount": 3, "grid": false }
+            "axis": null
         }
     }
 }]},{"data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Population%20growth.csv"},
@@ -163,7 +163,7 @@
 ]  
 }, {
   "width": 350,
-  "height": 60,
+  "height": 20,
   "mark": "bar",
   "params": [{
       "name": "brush",
@@ -180,7 +180,7 @@
       "y": {
           "field": "Population growth",
           "type": "quantitative",
-          "axis": { "tickCount": 3, "grid": false }
+          "axis": null
       }
   }
 }]}]
