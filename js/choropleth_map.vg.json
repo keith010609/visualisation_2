@@ -128,7 +128,7 @@
         "dy": 90,
         "baseline": "middle",
         "fontStyle": "italic",
-        "color": "green"
+        "color": "darkmagenta"
       },
       "encoding": {"text": {"field": "text_annotation"}}
     },
@@ -167,7 +167,7 @@
         "dy": 10,
         "baseline": "middle",
         "fontStyle": "italic",
-        "color": "red"
+        "color": "darkblue"
       },
       "encoding": {"text": {"field": "text_annotation"}}
     }

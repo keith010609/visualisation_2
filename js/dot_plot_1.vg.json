@@ -38,6 +38,34 @@
                 {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"}
               ]
           }
+        },
+        {
+          "transform": [
+            {
+              "window": [{"op": "rank", "as": "ranking"}],
+              "sort": [{"field": "Life expectancy", "order": "descending"}]
+            },
+            {"filter": "datum.ranking == 1"},
+            {
+              "calculate": "datum['Country'] + ' has the highest; life expecatancy: ' + datum['Life expectancy']",
+              "as": "text_annotation_raw"
+            },
+            {
+              "calculate": "split(datum.text_annotation_raw, ';')",
+              "as": "text_annotation"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize":14,
+            "align": "right",
+            "dx": 270,
+            "dy": -160,
+            "baseline": "middle",
+            "fontStyle": "italic",
+            "color": "darkmagenta"
+          },
+          "encoding": {"text": {"field": "text_annotation"}}
         }
       ]
     }, {

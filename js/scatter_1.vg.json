@@ -40,10 +40,10 @@
             "fontSize":14,
             "align": "right",
             "dx":0,
-            "dy":0,
+            "dy":-30,
             "baseline": "middle",
             "fontStyle": "italic",
-            "color": "darkseagreen"
+            "color": "darkmagenta"
           },
           "encoding": {"text": {"field": "text_annotation"}}
     }]
