@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "config": {"view": {"stroke": ""}},
     "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
-    "width": 600,
+    "width": 700,
     "height": 200,
     "layer":[{
         "mark": "point",

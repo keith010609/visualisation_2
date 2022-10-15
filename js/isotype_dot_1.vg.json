@@ -11,7 +11,7 @@
       }]
     }, {"filter": "datum.rank <= 30"}], 
   "hconcat": [{
-    "width": 550,
+    "width": 650,
     "height": 500,
     "transform": [{
       "filter": {"param": "brush"}

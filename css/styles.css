@@ -97,25 +97,25 @@ mark.green {
 }
 
 
-.head { grid-area: header;font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);}
-.choropleth_map { grid-area: map;background-color: rgba(255, 255, 255, 0.8);;padding: 5px;}
-.dotplot {grid-area: dotplot;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.scatplot {grid-area: scatplot;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.description1 { grid-area: description1; 
-	font-family: Arial, Helvetica, sans-serif; background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.description2 { grid-area: description2; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.isotype_dot { grid-area: isotype_dot;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.barchart1 {grid-area: barchart1; background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.barchart2 {grid-area: barchart2;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.description3 { grid-area: description3; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.description4 { grid-area: description4; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.description5 { grid-area: description5; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.description6 { grid-area: description6; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 5px;}
-.srHead { grid-area: srHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 5px;}
-.leHead { grid-area: leHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 5px;}
-.mcHead { grid-area: mcHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 5px;}
-.srtHead { grid-area: srtHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 5px;}
-.pgHead { grid-area: pgHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 5px;}
+.head { grid-area: header;font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8)}
+.choropleth_map { grid-area: map;background-color: rgba(255, 255, 255, 0.8);;padding: 10px;}
+.dotplot {grid-area: dotplot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
+.scatplot {grid-area: scatplot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
+.description1 { line-height: 26px;grid-area: description1; 
+	font-family: Arial, Helvetica, sans-serif; background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
+.description2 { line-height: 26px;grid-area: description2; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
+.isotype_dot { grid-area: isotype_dot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
+.barchart1 {grid-area: barchart1; background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
+.barchart2 {grid-area: barchart2;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
+.description3 { line-height: 26px;grid-area: description3; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
+.description4 { line-height: 26px;grid-area: description4; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
+.description5 { line-height: 26px;grid-area: description5; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
+.description6 { line-height: 26px;grid-area: description6; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
+.srHead { grid-area: srHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
+.leHead { grid-area: leHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
+.mcHead { grid-area: mcHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
+.srtHead { grid-area: srtHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
+.pgHead { grid-area: pgHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
 .grid-container {
 	display: grid;
 	grid-template:
@@ -130,14 +130,11 @@ mark.green {
 	  'srtHead srtHead srtHead srtHead'
 	  'barchart1 barchart1 description3 description3'
 	  'pgHead pgHead pgHead pgHead'
-	  'barchart2 barchart2 description5 description5';
-	grid-gap: 5px;
-
-
+	  'barchart2 barchart2 description5 description5'; 
+	  
   }
   
 .grid-container > div {
 font-size: 30px;
-
 }
 

@@ -9,7 +9,7 @@
     }],
     "vconcat": [{
     "title" : "Population growth below 0.07",
-    "width": 300,
+    "width": 350,
     "height": 240,
     
     "layer": [
@@ -74,7 +74,7 @@
     
 
 }, {
-    "width": 300,
+    "width": 350,
     "height": 60,
     "mark": "bar",
     "params": [{
@@ -99,7 +99,7 @@
   "filter":"datum['PopGrowth'] > 2.8"
 }],"vconcat": [{
   "title" : "Population growth above 2.8",
-  "width": 300,
+  "width": 350,
   "height": 240,
   
   "layer": [
@@ -162,7 +162,7 @@
   }
 ]  
 }, {
-  "width": 300,
+  "width": 350,
   "height": 60,
   "mark": "bar",
   "params": [{

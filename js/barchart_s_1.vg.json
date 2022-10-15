@@ -6,7 +6,7 @@
   {"filter": "datum['Sex-ratio'] < 0.93"}],
   "vconcat": [{
     "title" : "Sex-ratio below 0.93",
-    "width": 300,
+    "width": 350,
     "height": 100,
     
     "layer": [
@@ -72,7 +72,7 @@
     
 
 }, {
-    "width": 300,
+    "width": 350,
     "height": 60,
     "mark": "bar",
     "params": [{
@@ -100,7 +100,7 @@
     {"filter": "datum['Sex-ratio'] >1.05"}],
   "vconcat": [{
     "title" : "Sex-ratio above 1.05",
-    "width": 300,
+    "width": 350,
     "height": 100,
     "layer": [
       {
@@ -165,7 +165,7 @@
     
 
 }, {
-    "width": 300,
+    "width": 350,
     "height": 60,
     "mark": "bar",
     "params": [{
