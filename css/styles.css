@@ -32,6 +32,9 @@
 	bottom: 100px; 
 	left: 20px;
 	right: 100px;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: darkslateblue;
 }
 #barchart1{
 	top:10px;
