@@ -73,7 +73,7 @@
 
   <!-- Dot plot -->
   <div class = "dotplot">
-    <t><b>Life expectancy Chart</b><br></t>
+    <t><b>World's top 30 life expectancy</b><br></t>
     <p2><b>&#128308; Median age   &#128309; Life expectancy</b><br></p2>
     <div id="dot_plot"></div>
     <script>
@@ -86,6 +86,19 @@
       }
       
       life();
+    </script>
+  </div>
+  <div class = "scatplot">
+    <t><b>Median age and life expectancy</b><br></t>
+    <div id="scatplot"></div>
+    <script>
+      function life2(){
+          var spec2 = `js/scatter_1.vg.json`;
+          vegaEmbed('#scatplot', spec2).then(function(result) {
+              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+      }
+      life2();
     </script>
   </div>
   

@@ -1,65 +1,69 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {"view": {"stroke": ""}},
-  "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
-  "transform": [
-    {
-      "window": [{
-        "op": "rank",
-        "as": "rank"
-      }]
-    }, {"filter": "datum.rank <= 30"}], 
-  "hconcat": [{
-    "width": 600,
-    "height": 500,
-    "transform": [{
-      "filter": {"param": "brush"}
-    }],
-    "layer": [
+  "vconcat":[{
+    "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
+    "transform": [
       {
-        "mark": { "type": "point" , "color":"red","fill":"Red"},
-        "encoding": {
-            "x": { "field": "Median age", "type": "quantitative" },
-            "y": { "field": "Country" , "type": "ordinal","sort":{"field":"Life expectancy","order":"descending"}},
-            "tooltip":[
-              {"field": "Country", "type": "nominal", "title": "Country"},
-              {"field": "Median age", "type": "quantitative", "title": "Median age"}
-            ]
+        "window": [{
+          "op": "rank",
+          "as": "rank"
+        }]
+      }, {"filter": "datum.rank <= 30"}], 
+    "hconcat": [{
+      "width": 600,
+      "height": 400,
+      "transform": [{
+        "filter": {"param": "brush"}
+      }],
+      "layer": [
+        {
+          "mark": { "type": "point" , "color":"red","fill":"Red"},
+          "encoding": {
+              "x": { "field": "Median age", "type": "quantitative" },
+              "y": { "field": "Country" , "type": "ordinal","sort":{"field":"Life expectancy","order":"descending"}},
+              "tooltip":[
+                {"field": "Country", "type": "nominal", "title": "Country"},
+                {"field": "Median age", "type": "quantitative", "title": "Median age"}
+              ]
+          }
         }
-      }
-      ,{
-        "mark": { "type": "point", "color":"blue" ,"fill":"blue"},
-        "encoding": {
-            "x": { "field": "Life expectancy", "type": "quantitative" },
-            "y": { "field": "Country" , "type": "ordinal","sort":{"field":"Life expectancy","order":"descending"}},
-            "tooltip":[
-              {"field": "Country", "type": "nominal", "title": "Country"},
-              {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"}
-            ]
+        ,{
+          "mark": { "type": "point", "color":"blue" ,"fill":"blue"},
+          "encoding": {
+              "x": { "field": "Life expectancy", "type": "quantitative" },
+              "y": { "field": "Country" , "type": "ordinal","sort":{"field":"Life expectancy","order":"descending"}},
+              "tooltip":[
+                {"field": "Country", "type": "nominal", "title": "Country"},
+                {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"}
+              ]
+          }
         }
+      ]
+    }, {
+      "height": 200,
+      "width": 50,
+      "params": [{
+        "name": "brush",
+        "select": {
+          "type": "interval",
+          "encodings": ["y"]
+        }
+      }],
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": null
+        },
+        "x": { "field": "Median age", "type": "quantitative", "axis": null }
       }
+    }]
+  }
   
-    ]
-  }, {
-    "height": 200,
-    "width": 50,
-    "params": [{
-      "name": "brush",
-      "select": {
-        "type": "interval",
-        "encodings": ["y"]
-      }
-    }],
-    "mark": "bar",
-    "encoding": {
-      "y": {
-        "field": "Country",
-        "type": "nominal",
-        "sort": "-x",
-        "axis": null
-      },
-      "x": { "field": "Median age", "type": "quantitative", "axis": null }
-    }
-  }]
+]
+  
   
 }

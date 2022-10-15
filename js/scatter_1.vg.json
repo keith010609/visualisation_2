@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {"view": {"stroke": ""}},
+    "data": {"url": "https://raw.githubusercontent.com/keith010609/visualisation_2/main/data/Life%20expectancy.csv" },
+    "width": 600,
+    "height": 200,
+    "layer":[{
+        "mark": "point",
+        "encoding": {
+          "x": {"field": "Life expectancy", "type": "quantitative"},
+          "y": {"field": "Median age", "type": "quantitative"},
+          "tooltip":[
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Life expectancy", "type": "quantitative", "title": "Life expectancy"},
+            {"field": "Median age", "type": "quantitative", "title": "Median age"}
+          ],
+          "color": {
+            "field": "Life expectancy",
+            "type": "quantitative"
+          }
+        }
+    },
+        {"transform": [
+            {
+            "window": [{"op": "rank", "as": "ranking"}],
+            "sort": [{"field": "Life expectancy", "order": "descending"}]
+            },
+            {"filter": "datum.ranking == 2"},
+            {
+            "calculate": "datum['Country'] + ' has the second highest; life expectancy: ' + datum['Life expectancy'] + ',;highest median age ' + datum['Median age']",
+            "as": "text_annotation_raw"
+            },
+            {
+            "calculate": "split(datum.text_annotation_raw, ';')",
+            "as": "text_annotation"
+            }
+        ],
+        "mark": {
+            "type": "text",
+            "fontSize":14,
+            "align": "right",
+            "dx":0,
+            "dy":0,
+            "baseline": "middle",
+            "fontStyle": "italic",
+            "color": "darkseagreen"
+          },
+          "encoding": {"text": {"field": "text_annotation"}}
+    }]
+    
+}

@@ -27,6 +27,12 @@
 	width: 800px;*/
 }
 
+#scatplot{
+	top:10px;
+	bottom: 100px; 
+	left: 20px;
+	right: 100px;
+}
 #barchart1{
 	top:10px;
 	bottom: 100px; 
@@ -90,6 +96,7 @@ mark.green {
 .head { grid-area: header;font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);}
 .choropleth_map { grid-area: map;background-color: rgba(255, 255, 255, 0.8);;padding: 10px;}
 .dotplot {grid-area: dotplot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
+.scatplot {grid-area: scatplot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .description1 { grid-area: description1; 
 	font-family: Arial, Helvetica, sans-serif; background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .description2 { grid-area: description2; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
@@ -99,6 +106,7 @@ mark.green {
 .description3 { grid-area: description3; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .description4 { grid-area: description4; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .description5 { grid-area: description5; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
+.description6 { grid-area: description6; font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .srHead { grid-area: srHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
 .leHead { grid-area: leHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
 .mcHead { grid-area: mcHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
@@ -112,6 +120,7 @@ mark.green {
 	  'map map description1 description1'
 	  'leHead leHead leHead leHead'
 	  'dotplot dotplot description4 description4'
+	  'scatplot scatplot description6 description6'
 	  'mcHead mcHead mcHead mcHead'
 	  'isotype_dot isotype_dot description2 description2'
 	  'srtHead srtHead srtHead srtHead'
