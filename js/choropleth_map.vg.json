@@ -64,7 +64,7 @@
           "as": "note"
         }
       ],
-      "mark": {"type": "geoshape", "fill": "black", "stroke": "white"},
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"},
       "encoding": {"tooltip": {"field": "note"}}
     },{
       "transform": [
