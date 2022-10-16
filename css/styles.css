@@ -55,15 +55,17 @@
 }
 
 h1 {
-	font-size: 40px;
-	color: darkblue;
+	font-size: 43px;
+	color: rgb(3, 3, 3);
   	text-align: center;
+	font-family: cursive;
 	line-height: 10px;
 }
 h2 {
 	font-size: 18px;
 	text-align: center;
-	color: darkblue;
+	color: rgb(85, 85, 88);
+	font-family: cursive;
 	line-height: 0%;
 	
 }
@@ -71,13 +73,13 @@ h2 {
 t {
 	font-size: 21px;
 	font-family: Arial, Helvetica, sans-serif;
-	color: darkslateblue;
+	color: rgb(65, 65, 66);
 }
 
 t1 {
 	font-size: 28px;
 	font-family: Arial, Helvetica, sans-serif;
-	color: darkslateblue;
+	color: rgb(250, 249, 252);
 }
 
 p1 {
@@ -102,25 +104,25 @@ mark.green {
 }
 
 
-.head { grid-area: header;font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8)}
+.head { grid-area: header;font-family: Arial, Helvetica, sans-serif;background-color: rgba(255, 255, 255, 0.8)}
 .choropleth_map { grid-area: map;background-color: rgba(255, 255, 255, 0.8);;padding: 10px;}
 .dotplot {grid-area: dotplot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .scatplot {grid-area: scatplot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .description1 { line-height: 26px;grid-area: description1; 
-	font-family: Arial, Helvetica, sans-serif; background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
-.description2 { line-height: 26px;grid-area: description2; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
+	font-family: Arial, Helvetica, sans-serif; background-color: lightgray;padding: 10px;}
+.description2 { line-height: 26px;grid-area: description2; font-family: Arial, Helvetica, sans-serif;background-color: lightgray;padding: 10px;}
 .isotype_dot { grid-area: isotype_dot;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .barchart1 {grid-area: barchart1; background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
 .barchart2 {grid-area: barchart2;background-color: rgba(255, 255, 255, 0.8);padding: 10px;}
-.description3 { line-height: 26px;grid-area: description3; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
-.description4 { line-height: 26px;grid-area: description4; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
-.description5 { line-height: 26px;grid-area: description5; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
-.description6 { line-height: 26px;grid-area: description6; font-family: Arial, Helvetica, sans-serif;background-color: rgba(244, 222, 245, 0.8);padding: 10px;}
-.srHead { grid-area: srHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
-.leHead { grid-area: leHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
-.mcHead { grid-area: mcHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
-.srtHead { grid-area: srtHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
-.pgHead { grid-area: pgHead; font-family: Arial, Helvetica, sans-serif;background-color: rgba(189, 182, 245, 0.8);padding: 10px;}
+.description3 { line-height: 26px;grid-area: description3; font-family: Arial, Helvetica, sans-serif;background-color: lightgray;padding: 10px;}
+.description4 { line-height: 26px;grid-area: description4; font-family: Arial, Helvetica, sans-serif;background-color: lightgray;padding: 10px;}
+.description5 { line-height: 26px;grid-area: description5; font-family: Arial, Helvetica, sans-serif;background-color: lightgray;padding: 10px;}
+.description6 { line-height: 26px;grid-area: description6; font-family: Arial, Helvetica, sans-serif;background-color: lightgray;padding: 10px;}
+.srHead { grid-area: srHead; font-family: Arial, Helvetica, sans-serif;background-color: black;padding: 10px;}
+.leHead { grid-area: leHead; font-family: Arial, Helvetica, sans-serif;background-color: black;padding: 10px;}
+.mcHead { grid-area: mcHead; font-family: Arial, Helvetica, sans-serif;background-color: black;padding: 10px;}
+.srtHead { grid-area: srtHead; font-family: Arial, Helvetica, sans-serif;background-color: black;padding: 10px;}
+.pgHead { grid-area: pgHead; font-family: Arial, Helvetica, sans-serif;background-color: black;padding: 10px;}
 .grid-container {
 	display: grid;
 	grid-template:
